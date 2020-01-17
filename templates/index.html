@@ -22,7 +22,7 @@
     	<div class="row">
 			      
 		<div class="col-md-6">
-			<p style="font-weight: bold;">Please, select one of the following:</p>
+			<p style="font-weight: bold;">Please, pick one of the following:</p>
 			<form action = "{{url_for('analyze')}}" method="POST" id="myForm">       
 			<select name = 'comp_select' class="form-control" onchange="selector()">
 				<option value="" disabled selected>Search by:</option>
@@ -36,7 +36,7 @@
 ​
 		<div class = "container">
 			<p></p>
-			<p style="font-weight: bold;">Pick a subject you'd like to analyze:</p>
+			<p style="font-weight: bold;">Type a subject you'd like to analyze:</p>
 			<form action = "{{url_for('analyze')}}" method="POST" id="myForm" class="form-group">
 				<textarea rows="1" name = "rawtext" class = "form-control" style="margin-top:5px; margin-bottom: 5px;"></textarea>
 				<input type="submit" name="" value = "Go!" class = "btn btn-primary btn-md" role="button">
