@@ -13,7 +13,6 @@ import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 pd.set_option('display.max_colwidth', -1)
-import credentials
 app = Flask(__name__)
 Bootstrap(app)
 @app.route('/')
@@ -26,10 +25,10 @@ def analyze():
     if request.method == 'POST' and select != "hdl":  
         rawtext = request.form['rawtext']
         
-        token = credentials.token
-        token_secret = credentials.token_secret
-        consumer_key = credentials.consumer_key
-        consumer_secret = credentials.consumer_secret
+        token = '1212463191910842368-l00ryMICeXQXXawl8w2zazEoFS7xDf'
+        token_secret = 'hbzjFRq1r2ygkydPXfrwrhm5zTa54F3mYEm2wi7Q09DgA'
+        consumer_key = 'g8V7jnF3dqMfg4LRhtobYB4Pl'
+        consumer_secret = 'Y0SHSL0H9X9gCtuy07mJ3cp144DS2JhwX4Uvgda2ph8NvIUswJ'
     #Call Twitter API to request tweets with the $rawtext (using the $ for now for testing)
         t = Twitter(auth=OAuth(token, token_secret, consumer_key, consumer_secret))
         tweets= t.search.tweets(q=f'{str(select)}{rawtext}', include_rts=False, tweet_mode='extended',count=200)
@@ -156,10 +155,10 @@ def analyze():
         return render_template('index.html',wordfig1=fig7,pol1 = pol1[0],pol2 = pol2[0],name2 = name2[0], text2 = text2[0],name1= name1[0],text1=text1[0],rawtext=rawtext,tw_html2=tw_html2,fig=fig,fig3 = fig3,at="@",br="|")
     else:
         rawtext = request.form['rawtext']
-        token = credentials.token
-        token_secret = credentials.token_secret
-        consumer_key = credentials.consumer_key
-        consumer_secret = credentials.consumer_secret
+        token = '1212463191910842368-l00ryMICeXQXXawl8w2zazEoFS7xDf'
+        token_secret = 'hbzjFRq1r2ygkydPXfrwrhm5zTa54F3mYEm2wi7Q09DgA'
+        consumer_key = 'g8V7jnF3dqMfg4LRhtobYB4Pl'
+        consumer_secret = 'Y0SHSL0H9X9gCtuy07mJ3cp144DS2JhwX4Uvgda2ph8NvIUswJ'
         t = Twitter(auth=OAuth(token, token_secret, consumer_key, consumer_secret))
         tweets= t.statuses.user_timeline(screen_name=f'{rawtext}', count=100, include_rts=False, tweet_mode = 'extended')
     #Get the tweet text (tw1) and and the sentiment (tw2), appened them to lists
