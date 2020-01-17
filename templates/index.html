@@ -3,7 +3,7 @@
 ​
 <head>
   <meta charset="UTF-8">
-  <title>Fake News! App</title>
+  <title>Fake News!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 ​
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -22,7 +22,7 @@
     	<div class="row">
 			      
 		<div class="col-md-6">
-			<p>Please, select one of the following:</p>
+			<p style="font-weight: bold;">Please, select one of the following:</p>
 			<form action = "{{url_for('analyze')}}" method="POST" id="myForm">       
 			<select name = 'comp_select' class="form-control" onchange="selector()">
 				<option value="" disabled selected>Search by:</option>
@@ -36,7 +36,7 @@
 ​
 		<div class = "container">
 			<p></p>
-			<p>Pick a subject you'd like to analyze:</p>
+			<p style="font-weight: bold;">Pick a subject you'd like to analyze:</p>
 			<form action = "{{url_for('analyze')}}" method="POST" id="myForm" class="form-group">
 				<textarea rows="1" name = "rawtext" class = "form-control" style="margin-top:5px; margin-bottom: 5px;"></textarea>
 				<input type="submit" name="" value = "Go!" class = "btn btn-primary btn-md" role="button">
@@ -52,11 +52,11 @@
 	<div class="col">
 		<div class="card" id="goodbad" style="width: 100%;">
 			<div class="card-body">
-				<p>Most Positive Tweet:</p>
+				<p style="font-weight: bold;">Most Positive Tweet:</p>
 				<p class="card-text" ><i>{{text1}}</i></p>
 				<h6 class="card-title" >{{at}}{{name1}} {{br}} {{pol1}}</h6>
 				<hr class="my-4">
-				<p>Most Negative Tweet:</p>
+				<p style="font-weight: bold;">Most Negative Tweet:</p>
 				<p class="card-text" ><i>{{text2}}</i></p>
 				<h6 class="card-title" >{{at}}{{name2}} {{br}} {{pol2}}</h6>
 			</div>
@@ -67,7 +67,7 @@
 <div class="row" style="margin-top: 20px;">
 	<div class="col-sm-12">
 		<div class="card" style="width: 100%;">
-				<div class="card-header">
+				<div class="card-header" style="font-weight: bold;">
 						Sentiment by Retweet:
 					  </div>
 			<div class="card-body">
@@ -81,7 +81,7 @@
 <div class="row" style="margin-top: 20px;">
 	<div class="col-sm-6">
 		<div class="card" style="width: 100%;">
-				<div class="card-header">
+				<div class="card-header" style="font-weight: bold;">
 						Average Sentiment:
 						</div>
 			<div class="card-body">
@@ -92,7 +92,7 @@
 		</div>
 	<div class="col-sm-6">
 		<div class="card" style="width: 100%">
-				<div class="card-header">
+				<div class="card-header" style="font-weight: bold;">
 						Commonality Chart:
 						</div>
 			<div class="card-body">
