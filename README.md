@@ -28,9 +28,9 @@ The gauge plot show mean sentiment value for the current search output.
 
 ![gauge](images/gauge.png)
 
-The bar chart most commonly used device used by the author of the tweet.
+The bar chart shows most common words used by the author of the tweet when search is performed on a handle, for other search options the bar chart will show most commonly used device.
 
-![device](images/device.png)
+![wordcount](images/wordcount.png)
 
 The table show the summary of data received from the current search.
 
