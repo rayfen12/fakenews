@@ -7,8 +7,6 @@ import datetime
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from textblob import TextBlob,Word 
-import random 
-import time
 import plotly.express as px
 import plotly as py
 import plotly.graph_objects as go
