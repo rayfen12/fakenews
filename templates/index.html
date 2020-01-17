@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+  <meta charset="UTF-8">
+  <title>App-Name-PH</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+​
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+​
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+​
+  <div class="container">
+    <div class="jumbotron">
+		
+		  <h1 class="display-4">Fake News</h1>
+		  <p class="lead">This app allows you to search tweets by handle, hashtag, ticker or keyword and displays sentiment stats!</p>
+		  <hr class="my-4">
+    	<div class="row">
+			      
+		<div class="col-md-6">
+			<form action = "{{url_for('analyze')}}" method="POST" id="myForm">       
+			<select name = 'comp_select' class="form-control" onchange="selector()">
+				<option value="" disabled selected>Search by:</option>
+				<option value="#">Hashtag</option>
+				<option value="$">Ticker</option>
+				<option value="hdl">Handle</option>
+				<option value="">Free Search</option>
+			</select>       
+		</div>
+​
+​
+		<div class = "container">
+			<form action = "{{url_for('analyze')}}" method="POST" id="myForm" class="form-group">
+				<textarea rows="1" name = "rawtext" class = "form-control" style="margin-top:5px; margin-bottom: 5px;"></textarea>
+				<input type="submit" name="" value = "Go!" class = "btn btn-primary btn-md" role="button">
+				<!--<input type="reset" name="" value = "Clear" class = "btn-primary">
+				<a href="{{url_for('index')}}" type="button" class = "btn-primary">Reset</a>-->
+				<hr/>
+				<h2>{{rawtext | safe}}</h2>
+		</div>
+	</div>
+</div>
+​
+<div class="row">
+	<div class="col">
+		<div class="card" id="goodbad" style="width: 100%;">
+			<div class="card-body">
+				<p class="card-text" ><i>{{text1}}</i></p>
+				<h6 class="card-title" >{{at}}{{name1}} {{br}} {{pol1}}</h6>
+				<hr class="my-4">
+				<p class="card-text" ><i>{{text2}}</i></p>
+				<h6 class="card-title" >{{at}}{{name2}} {{br}} {{pol2}}</h6>
+			</div>
+		</div>
+	</div>
+</div>
+​
+<div class="row" style="margin-top: 20px;">
+	<div class="col-sm-12">
+		<div class="card" style="width: 100%;">
+				<div class="card-header">
+						Sentiment by retweet
+					  </div>
+			<div class="card-body">
+					{{fig | safe}}
+			<!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+			</div>
+		</div>
+		</div>
+</div>
+​
+<div class="row" style="margin-top: 20px;">
+	<div class="col-sm-6">
+		<div class="card" style="width: 100%;">
+				<div class="card-header">
+						Average sentiment
+						</div>
+			<div class="card-body">
+					{{fig3 | safe}}
+			<!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+			</div>
+		</div>
+		</div>
+	<div class="col-sm-6">
+		<div class="card" style="width: 100%">
+				<div class="card-header">
+						Commonality Chart
+						</div>
+			<div class="card-body">
+					{{wordfig1 | safe}}
+			<!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+			</div>
+		</div>
+	</div>
+</div>
+​
+<div class="row" style="margin-top: 20px;">
+<div class="col-sm-12">
+​
+		{{tw_html2 | safe}}	
+	</div>
+</div>
+​
+​
+​
+​
+</body>
+​
+</html>
