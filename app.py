@@ -13,7 +13,6 @@ import plotly as py
 import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
-import os
 
 pd.set_option('display.max_colwidth', -1)
 
