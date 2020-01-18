@@ -14,8 +14,10 @@ import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 import os
+from pml import app
 
-port = int(os.environ.get('PORT', 33507))
+port = int(os.environ.get('PORT', 5000))
+app.run(host='0.0.0.0', port=port)
 
 pd.set_option('display.max_colwidth', -1)
 
