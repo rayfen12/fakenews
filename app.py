@@ -2,6 +2,7 @@ from flask import Flask, render_template, request,url_for
 from flask_bootstrap import Bootstrap
 import numpy as np
 import twitter
+from twitter import *
 import pandas as pd
 import os
 import datetime
@@ -37,7 +38,7 @@ def analyze():
         consumer_secret = 'Y0SHSL0H9X9gCtuy07mJ3cp144DS2JhwX4Uvgda2ph8NvIUswJ'
         
     #Call Twitter API to request tweets with the $rawtext (using the $ for now for testing)
-        t = twitter.Api(auth=OAuth(token, token_secret, consumer_key, consumer_secret))
+        t = Twitter(auth=OAuth(token, token_secret, consumer_key, consumer_secret))
         tweets= t.search.tweets(q=f'{str(select)}{rawtext}', include_rts=False, tweet_mode='extended',count=200)
     #Get the tweet text (tw1) and and the sentiment (tw2), appened them to lists
     #Also counted how many elements there are in each list to make sure they match
