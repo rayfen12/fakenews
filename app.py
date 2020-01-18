@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 import numpy as np
 from twitter import *
 import pandas as pd
+import os
 import datetime
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -12,6 +13,13 @@ import plotly as py
 import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+   os.path.join(PROJECT_ROOT, '../app/static'),
+)
 
 pd.set_option('display.max_colwidth', -1)
 
