@@ -13,6 +13,9 @@ import plotly as py
 import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
+import os
+
+port = int(os.environ.get('PORT', 5000))
 
 pd.set_option('display.max_colwidth', -1)
 
