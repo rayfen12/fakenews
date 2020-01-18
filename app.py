@@ -1,34 +1,39 @@
 from flask import Flask, render_template,request,url_for
-from flask_bootstrap import Bootstrap 
+from flask_bootstrap import Bootstrap
 import numpy as np
 from twitter import *
-import pandas as pd 
+import pandas as pd
 import datetime
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
-from textblob import TextBlob,Word 
+from textblob import TextBlob,Word
 import plotly.express as px
 import plotly as py
 import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
+
 pd.set_option('display.max_colwidth', -1)
+
 app = Flask(__name__)
 Bootstrap(app)
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 @app.route('/analyse',methods=['POST'])
 def analyze():
     select = request.form.get('comp_select')
     #get the raw text from the input box
-    if request.method == 'POST' and select != "hdl":  
+    if request.method == 'POST' and select != "hdl":
         rawtext = request.form['rawtext']
-        
+
         token = '1212463191910842368-l00ryMICeXQXXawl8w2zazEoFS7xDf'
         token_secret = 'hbzjFRq1r2ygkydPXfrwrhm5zTa54F3mYEm2wi7Q09DgA'
         consumer_key = 'g8V7jnF3dqMfg4LRhtobYB4Pl'
         consumer_secret = 'Y0SHSL0H9X9gCtuy07mJ3cp144DS2JhwX4Uvgda2ph8NvIUswJ'
+        
     #Call Twitter API to request tweets with the $rawtext (using the $ for now for testing)
         t = Twitter(auth=OAuth(token, token_secret, consumer_key, consumer_secret))
         tweets= t.search.tweets(q=f'{str(select)}{rawtext}', include_rts=False, tweet_mode='extended',count=200)
