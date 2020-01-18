@@ -15,7 +15,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 import os
 
-port = int(os.environ.get('PORT', 5000))
+port = int(os.environ.get('PORT', 33507))
 
 pd.set_option('display.max_colwidth', -1)
 
