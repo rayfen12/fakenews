@@ -17,3 +17,4 @@ wordcloud==1.6.0
 Flask_Bootstrap==3.3.7.1
 python_twitter==3.5
 scikit_learn==0.22.1
+twitter==1.18.0
