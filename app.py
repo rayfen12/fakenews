@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,url_for
+from flask import Flask, render_template, request,url_for
 from flask_bootstrap import Bootstrap
 import numpy as np
 from twitter import *
@@ -14,8 +14,6 @@ import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 import os
-from app import app
-
 
 pd.set_option('display.max_colwidth', -1)
 
