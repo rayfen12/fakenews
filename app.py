@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request,url_for
 from flask_bootstrap import Bootstrap
 import numpy as np
-import twitter
 from twitter import *
 import pandas as pd
 import os

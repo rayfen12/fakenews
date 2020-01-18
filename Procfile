@@ -1,1 +1,1 @@
-gunicorn  app:application -b xx.xxx.xxx.xx:8000
+web: gunicorn app:app --debug --log-level debug
