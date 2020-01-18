@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request,url_for
 from flask_bootstrap import Bootstrap
 import numpy as np
-from twitter import *
+from twitter import Twitter
 import pandas as pd
 import os
 import datetime
