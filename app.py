@@ -14,6 +14,7 @@ import plotly.graph_objects as go
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import Counter
 import os
+from app import app
 
 
 pd.set_option('display.max_colwidth', -1)
@@ -265,5 +266,6 @@ def analyze():
         name2 = filtered_worst_tweet.Handle.tolist()
         pol2 = filtered_worst_tweet.Polarity.tolist()
         return render_template('index.html',pol1 = pol1[0],pol2 = pol2[0],name2 = name2[0], text2 = text2[0],name1= name1[0],text1=text1[0],wordfig1=wordfig1,rawtext=rawtext,tw_html2=tw_html2,fig=fig,fig3 = fig3,at="@",br="|")
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run()
