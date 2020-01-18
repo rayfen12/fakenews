@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request,url_for
-from flask-bootstrap import Bootstrap
+from flask_bootstrap import Bootstrap
 import numpy as np
 from twitter import *
 import pandas as pd
