@@ -268,4 +268,4 @@ def analyze():
         return render_template('index.html',pol1 = pol1[0],pol2 = pol2[0],name2 = name2[0], text2 = text2[0],name1= name1[0],text1=text1[0],wordfig1=wordfig1,rawtext=rawtext,tw_html2=tw_html2,fig=fig,fig3 = fig3,at="@",br="|")
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='72.69.195.134', port=port)
